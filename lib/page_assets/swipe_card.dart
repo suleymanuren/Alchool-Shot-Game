@@ -7,6 +7,7 @@ import 'package:swipe_cards/swipe_cards.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
+import '../pages/main_page.dart';
 import '../ui/helper/responsive.dart';
 
 String soruData = "Sorular için kaydırmaya başlayın";
@@ -81,18 +82,32 @@ class _SwiperCardState extends State<SwiperCard> {
         key: _scaffoldKey,
         body: Column(
           children: [
-            SizedBox(
-              height: SizeConfig.screenHeight * .40,
+              SizedBox(
+              height: SizeConfig.screenHeight * .32,
             ),
+ElevatedButton(  style: ElevatedButton.styleFrom(
+    primary: Colors.red.withOpacity(0.9), // Background color
+  ),
+  onPressed: () {
+     Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainPage()));
+  },
+  child: Text('OYUNU BİTİR        ',textAlign: TextAlign.center,),
+),
+                        SizedBox(
+              height: SizeConfig.screenHeight * .025,
+            ),
+
             Row(
               children: [
                 SizedBox(
                   width: SizeConfig.screenWidth * .075,
                 ),
+
                 Container(
                     width: SizeConfig.screenHeight * .44,
                     height: SizeConfig.screenHeight * .47,
                     child: Stack(children: [
+                                              
                       Container(
                         height:
                             MediaQuery.of(context).size.height - kToolbarHeight,

@@ -6,24 +6,30 @@ import 'dart:convert' as convert;
 import '../page_assets/player_list_add.dart';
 import '../page_assets/player_list_add.dart';
 import '../page_assets/swipe_card.dart';
+import '../pages/main_page.dart';
 import '../ui/helper/responsive.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/retry.dart';
 import 'package:sizer/sizer.dart';
 
 String soruData = "Sorular için kaydırmaya başlayın";
+
 class ClassicGamePage extends StatefulWidget {
   static String routeName = '/ClassicGamePage';
   final String result;
-    final String result2;
+  final String result2;
 
   final String result3;
 
   final String result4;
 
-
-  const ClassicGamePage({Key? key, required this.result,required this.result2,required this.result3,required this.result4 }) : super(key: key);
-
+  const ClassicGamePage(
+      {Key? key,
+      required this.result,
+      required this.result2,
+      required this.result3,
+      required this.result4})
+      : super(key: key);
 
   @override
   State<ClassicGamePage> createState() => _ClassicGamePageState();
@@ -55,19 +61,22 @@ class _ClassicGamePageState extends State<ClassicGamePage> {
 
   @override
   Widget build(BuildContext context) {
-MaterialApp(
-  // Start the app with the "homeScreen" named route.
-  initialRoute: '/ClassicGamePage',
-  
-  routes: {  
-    // When navigating to the "homeScreen" route, build the HomeScreen widget.
-    '/ClassicGamePage': (context) => ClassicGamePage(result: '', result2: '', result3: '', result4: '',),
+    MaterialApp(
+      // Start the app with the "homeScreen" named route.
+      initialRoute: '/ClassicGamePage',
 
-  },
-);
+      routes: {
+        // When navigating to the "homeScreen" route, build the HomeScreen widget.
+        '/ClassicGamePage': (context) => ClassicGamePage(
+              result: '',
+              result2: '',
+              result3: '',
+              result4: '',
+            ),
+      },
+    );
     return Scaffold(
       body: Container(
-        
         height: SizeConfig.screenHeight,
         width: SizeConfig.screenWidth,
         decoration: BoxDecoration(
@@ -82,68 +91,87 @@ MaterialApp(
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Container(
-                  height: SizeConfig.screenHeight*.1,
-                      width: SizeConfig.screenWidth,
-                      decoration: BoxDecoration(        color: Colors.white,
-              borderRadius: BorderRadius.only(
-              topRight: Radius.circular(60),
-              bottomLeft: Radius.circular(50),
-              
+                    height: SizeConfig.screenHeight * .1,
+                    width: SizeConfig.screenWidth,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(60),
+                        bottomLeft: Radius.circular(50),
                       ),
                       border: Border.all(
-                      width: 3,
-                      color: Colors.grey.shade100,
-                      style: BorderStyle.solid,
+                        width: 3,
+                        color: Colors.grey.shade100,
+                        style: BorderStyle.solid,
+                      ),
                     ),
-                      )
-                      ,
-                  child:Row(children: [
-                    Flexible(child: SizedBox(width: SizeConfig.screenWidth*.025,)),
-              Flexible(flex: 5,
-                child:   new Center(
-                  child: new Text("${widget.result}", 
-                  style: TextStyle(color: Colors.black, fontSize: 18),
-                  textAlign: TextAlign.center,),
-                ),
-              ),
-                Flexible(flex: 5,
-                  child: new Center(
-                    child: new Text("${widget.result2}",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
-                    textAlign: TextAlign.center,),
-                  ),
-                ),
-                Flexible(flex: 4,
-                  child: new Center(
-                    child: new Text("${widget.result3}",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
-                    textAlign: TextAlign.center,),
-                  ),
-                ),
-                Flexible(flex: 5,
-                  child: new Center(
-                    child: new Text("${widget.result4}",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
-                    textAlign: TextAlign.center,),
-                  ),
-              
-                ),
-                                Flexible(child: SizedBox(width: SizeConfig.screenWidth*.025,)),
-              
-                  ],)
-                ),
+                    child: Row(
+                      children: [
+                        Flexible(
+                            child: SizedBox(
+                          width: SizeConfig.screenWidth * .025,
+                        )),
+                        Flexible(
+                          flex: 5,
+                          child: new Center(
+                            child: new Text(
+                              "${widget.result}",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 5,
+                          child: new Center(
+                            child: new Text(
+                              "${widget.result2}",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 4,
+                          child: new Center(
+                            child: new Text(
+                              "${widget.result3}",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          flex: 5,
+                          child: new Center(
+                            child: new Text(
+                              "${widget.result4}",
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 18),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                            child: SizedBox(
+                          width: SizeConfig.screenWidth * .025,
+                        )),
+                      ],
+                    )),
               ),
             ),
+
             Positioned(
-              top: SizeConfig.screenHeight*.13,
+              top: SizeConfig.screenHeight * .13,
               child: Image.asset(
                 "assets/images/gamedesk2.png",
                 width: SizeConfig.screenWidth,
               ),
             ),
             Positioned(child: SwiperCard())
-         
-
           ],
         ),
       ),
