@@ -30,17 +30,16 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.1.2+1
-  google_fonts: ^2.3.1
+  google_fonts: ^3.0.1
   slider_button: ^2.0.0
-  vibration: ^1.7.3
   swipe_cards: ^1.0.0
-  playing_cards: ^0.2.0+7
+  playing_cards: ^0.3.1+9
   appinio_swiper: ^1.0.2
   dio: ^4.0.4
   http: ^0.13.4
   shared_preferences: ^2.0.13
   sizer: ^2.0.15
-  blurrycontainer: ^0.1.0
+  blurrycontainer: ^1.0.2
   auto_size_text: ^3.0.0
 
 

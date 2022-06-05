@@ -1,10 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shotoyunuv1/page_assets/player_list_add.dart';
-import 'package:shotoyunuv1/page_assets/swipe_card.dart';
-import 'package:shotoyunuv1/pages/player_list_page.dart';
+
 import '../game_pages/classic_game_page.dart';
+import '../pages/player_list_page.dart';
 import '../ui/helper/responsive.dart';
 class KlasikModButton extends StatefulWidget {
   const KlasikModButton({Key? key}) : super(key: key);

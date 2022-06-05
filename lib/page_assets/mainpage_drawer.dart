@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shotoyunuv1/ui/helper/responsive.dart';
 
+import '../ui/helper/responsive.dart';
 import 'mainpage_scoreboard_button.dart';
 
 class MyDrawer extends StatefulWidget {

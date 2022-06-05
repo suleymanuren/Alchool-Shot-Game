@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shotoyunuv1/page_assets/player_list_add.dart';
-import 'package:shotoyunuv1/pages/main_page.dart';
+
 import 'dart:convert' as convert;
 import '../page_assets/player_list_add.dart';
 import '../page_assets/player_list_add.dart';
@@ -144,96 +142,7 @@ MaterialApp(
               ),
             ),
             Positioned(child: SwiperCard())
-          /*  GestureDetector(
-              onTap: () {
-                setState(() {
-                  main();
-                });
-                // Navigator.of(context).push(MaterialPageRoute(builder: (context) => PlayerList())); İLK VERSİYON OLARAK KAPALI
-                //Navigator.of(context).push(MaterialPageRoute(builder: (context) => OfflineGamePage()));
-              },
-              
-              child: Stack(
-                children: [ 
-                  Padding(
-                    padding: const EdgeInsets.only(top: 160.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        "assets/images/oyunkartı.png",
-                        width: SizeConfig.screenWidth,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 450,
-                    left: 110,
-                    child: Container(
-                      width: 200,
-                      child: Text(soruData,
-                          style: GoogleFonts.play(
-                            fontSize: 20,
-                            color: Colors.red,
-                              fontWeight: FontWeight.w600
-
-                          )
-                          ),
-                    ),
-                  ),
-                ],
-              ),
-            ),*/
-
-/*
-            Positioned(
-              top: 250,
-              child: GestureDetector(
-                onTap: (){
-                  main();
-
-
-                  // Navigator.of(context).push(MaterialPageRoute(builder: (context) => PlayerList())); İLK VERSİYON OLARAK KAPALI
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => OfflineGamePage()));
-
-                },
-
-                child: Column(
-                  children: [
-                    Image.asset(
-                      "assets/images/oyunkartı.png",
-                      width: SizeConfig.screenWidth,
-                    ),
-                    Align(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 150.0),
-                        child: Container(
-                          width: 200,
-                          child: Text(soruData, style: TextStyle(fontSize: 20,color: Colors.red,)),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-
-              ),
-            ),
-
-            Positioned(
-
-
-
-                child: Align(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 150.0),
-                    child: Container(
-                      width: 200,
-                      child: Text(soruData, style: TextStyle(fontSize: 20,color: Colors.red,)
-                      ),
-                    ),
-                  ),
-                  ),
-                ),
-*/
+         
 
           ],
         ),

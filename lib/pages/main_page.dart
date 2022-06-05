@@ -3,11 +3,10 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shotoyunuv1/page_assets/klasik_mod_button.dart';
-import 'package:shotoyunuv1/pages/player_list_page.dart';
-import 'package:shotoyunuv1/splash_screen/splash_screen.dart';
+
 
 import '../game_pages/classic_game_page.dart';
+import '../page_assets/klasik_mod_button.dart';
 import '../page_assets/mainpage_scoreboard_button.dart';
 import '../page_assets/rekabet_mod_button.dart';
 import '../ui/helper/responsive.dart';

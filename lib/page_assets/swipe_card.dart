@@ -2,11 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shotoyunuv1/ui/helper/responsive.dart';
 import 'package:swipe_cards/draggable_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
+
+import '../ui/helper/responsive.dart';
 
 String soruData = "Sorular için kaydırmaya başlayın";
 
@@ -31,19 +32,13 @@ class _SwiperCardState extends State<SwiperCard> {
   MatchEngine? _matchEngine;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
-
-
-
   String? itemCount;
   @override
   void main() async {
-    // This example uses the Google Books API to search for books about http.
-    // https://developers.google.com/books/docs/overview
+
     var url = Uri.https('www.softinyo.com', '/shot/index.php', {'q': '{http}'});
-// Obtain shared preferences.
     final prefs = await SharedPreferences.getInstance();
 
-    // Await the http get response, then decode the json-formatted response.
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonResponse =
@@ -60,7 +55,7 @@ class _SwiperCardState extends State<SwiperCard> {
   }
 
   void initState() {
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < soruData.length; i++) {
       _swipeItems.add(SwipeItem(
           content: Content(text: soruData, color: Colors.transparent),
           likeAction: () {
@@ -86,16 +81,21 @@ class _SwiperCardState extends State<SwiperCard> {
         key: _scaffoldKey,
         body: Column(
           children: [
-            SizedBox(height: SizeConfig.screenHeight*.35,),
+            SizedBox(
+              height: SizeConfig.screenHeight * .40,
+            ),
             Row(
               children: [
-                SizedBox(width: SizeConfig.screenWidth*.075,),
+                SizedBox(
+                  width: SizeConfig.screenWidth * .075,
+                ),
                 Container(
-                    width: SizeConfig.screenHeight * .4,
-                    height: SizeConfig.screenHeight * .5,
+                    width: SizeConfig.screenHeight * .44,
+                    height: SizeConfig.screenHeight * .47,
                     child: Stack(children: [
                       Container(
-                        height: MediaQuery.of(context).size.height - kToolbarHeight,
+                        height:
+                            MediaQuery.of(context).size.height - kToolbarHeight,
                         child: SwipeCards(
                           matchEngine: _matchEngine!,
                           itemBuilder: (BuildContext context, int index) {
@@ -106,23 +106,24 @@ class _SwiperCardState extends State<SwiperCard> {
                                   child: Image.asset(
                                     "assets/images/oyunkartı.png",
                                   )),
-                                  Positioned(
-top: SizeConfig.screenHeight*.15,
-                          left: SizeConfig.screenWidth*.2,                              child:Align(//alignment: Alignment.center,
-                            child: Container(                      
-                              width: SizeConfig.screenWidth*.5,
-                          
-                              child: Text(
-                                    soruData,
-                                    style: GoogleFonts.play(
-                                        fontSize: 20,
-                                        color: Colors.red,
-                                        fontWeight: FontWeight.w600),
-                                    maxLines: 20,
-                                  ),
-                            ),
-                          ) )
-                              
+                              Positioned(
+                                  top: SizeConfig.screenHeight * .15,
+                                  left: SizeConfig.screenWidth * .2,
+                                  child: Align(
+                                    //alignment: Alignment.center,
+                                    child: Container(
+                                      width: SizeConfig.screenWidth * .5,
+                                      child: Text(
+                                        soruData,
+                                        style: GoogleFonts.play(
+                                            fontSize: 20,
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.w600),
+                                        maxLines: 20,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ))
                             ]);
                           },
                           onStackFinished: () {
